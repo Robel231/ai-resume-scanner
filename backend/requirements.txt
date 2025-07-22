@@ -1,0 +1,15 @@
+# backend/requirements.txt
+
+fastapi
+uvicorn[standard]
+python-dotenv
+python-multipart
+sqlalchemy
+psycopg2-binary
+PyMuPDF
+openai # <-- Add this line
+passlib[bcrypt]
+python-jose[cryptography]
+pydantic[email]
+slowapi
+fastapi-cors
