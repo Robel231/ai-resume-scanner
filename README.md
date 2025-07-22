@@ -1,25 +1,23 @@
 # AI-Powered Resume Scanner & Job Matcher
 
-![AI Resume Scanner Showcase](https://your-image-host.com/showcase.gif)  <!-- **IMPORTANT**: Replace with a link to a GIF of your app in action! -->
+![AI Resume Scanner Showcase](httpshttps://github.com/Robel231/ai-resume-scanner/blob/main/showcase.gif?raw=true)
 
-This is a full-stack web application that provides instant, AI-driven feedback on a user's resume against a specific job description. Users can register, log in, and submit their resume to receive a match score, a summary of their strengths and weaknesses, and actionable advice for improvement.
+This is a full-stack web application designed to demystify the job application process. It provides users with instant, AI-driven feedback on how their resume aligns with a specific job description.
 
-**Live Demo:** [https://your-live-app-url.com](https://your-live-app-url.com) <!-- **IMPORTANT**: Add this once deployed -->
+The application is built with a modern, scalable, and production-ready architecture. It features a secure authentication system, a robust FastAPI backend that orchestrates AI analysis and data persistence, and a luxurious, fully interactive frontend built with Next.js.
+
+The goal of this project was to build a complete, end-to-end product that solves a real-world problem for job seekers, demonstrating skills in backend development, frontend design, AI integration, and DevOps.
 
 ---
 
 ## 🔥 Key Features
 
--   **Secure User Authentication:** JWT-based registration and login system.
+-   **Secure User Authentication:** JWT-based registration and login system with password hashing.
 -   **AI-Powered Analysis:** Leverages large language models (via Groq/OpenAI) to provide nuanced feedback.
--   **Dynamic PDF Parsing:** Extracts text directly from uploaded PDF resumes.
--   **Comprehensive Reporting:** Generates a beautiful, easy-to-read report including:
-    -   A Match Score (0-100)
-    -   An Executive Summary
-    -   A list of Strengths & Gaps
-    -   Suggested Keywords to add
+-   **Dynamic PDF Parsing:** Extracts text directly from uploaded PDF resumes using PyMuPDF.
+-   **Comprehensive Reporting:** Generates a beautiful, easy-to-read report including a match score, strengths, gaps, and actionable advice.
 -   **API Protection:** Implements Redis-based rate limiting to prevent abuse and control costs.
--   **Interactive UI:** A luxurious, responsive frontend built with Next.js, featuring animations and a premium feel.
+-   **Interactive UI:** A luxurious, responsive frontend built with Next.js, featuring animations, glassmorphism, and a premium feel.
 
 ## 🛠️ Tech Stack
 
@@ -30,14 +28,14 @@ This is a full-stack web application that provides instant, AI-driven feedback o
 | **AI Model**  | Groq (Llama 3) / OpenAI (GPT-3.5)             |
 | **Database**  | PostgreSQL                                    |
 | **Cache**     | Redis (for Rate Limiting)                     |
-| **API Libs**  | SQLAlchemy, Pydantic, Passlib, python-jose    |
+| **API Libs**  | SQLAlchemy, Pydantic, Passlib, python-jose, SlowAPI |
 | **Containerization** | Docker & Docker Compose                       |
 
 ---
 
 ## 🚀 Running Locally
 
-This project is fully containerized, making local setup incredibly simple.
+This project is fully containerized, making local setup incredibly simple and reliable.
 
 ### Prerequisites
 
@@ -48,45 +46,33 @@ This project is fully containerized, making local setup incredibly simple.
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/ai-resume-scanner.git
+    git clone https://github.com/Robel231/ai-resume-scanner.git
     cd ai-resume-scanner
     ```
 
 2.  **Create your environment file:**
-    Copy the example environment file and fill in your own secret keys and credentials.
+    Copy the example environment file. This file contains all the necessary variables your application needs.
     ```bash
     cp .env.example .env
     ```
-    You will need to add your `JWT_SECRET_KEY` and your `GROQ_API_KEY`.
 
-3.  **Build and run the application:**
-    This single command will build the images for all services and start them.
+3.  **Fill in your secrets:**
+    Open the newly created `.env` file and add your own secret keys for `JWT_SECRET_KEY` and your `GROQ_API_KEY`.
+
+4.  **Build and run the application:**
+    This single command will build the images for all services (API, frontend, DB, Redis) and start them in a networked environment.
     ```bash
     docker-compose up --build
     ```
 
-4.  **Access the application:**
+5.  **Access the application:**
     -   **Frontend UI:** [http://localhost:3000](http://localhost:3000)
     -   **Backend API Docs:** [http://localhost:8000/docs](http://localhost:8000/docs)
 
 ---
 
-## 🖼️ Screenshots
-
-<table>
-  <tr>
-    <td><img src="https://your-image-host.com/login-page.png" alt="Login Page"></td>
-    <td><img src="https://your-image-host.com/main-app.png" alt="Main Application Page"></td>
-  </tr>
-  <tr>
-    <td colspan="2"><img src="https://your-image-host.com/report.png" alt="Analysis Report"></td>
-  </tr>
-</table>
-
-<!-- **IMPORTANT**: Add screenshots of your application -->
-
 ## Acknowledgment
 
-This project was built step-by-step with guidance, showcasing a full development lifecycle from idea to a polished, deployable application.
+This project was built step-by-step with guidance, showcasing a full development lifecycle from an idea in a brain dump to a polished, containerized application.
 
 Built by Robel Shemeles.
