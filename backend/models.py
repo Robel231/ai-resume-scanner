@@ -1,4 +1,4 @@
-# backend/models.py
+
 from sqlalchemy import Column, Integer, String, JSON, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
@@ -18,6 +18,6 @@ class Analysis(Base):
     resume_filename = Column(String)
     analysis_result = Column(JSON)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
-    # Add the foreign key to link to the User table
+    
     owner_id = Column(Integer, ForeignKey("users.id"))
     owner = relationship("User", back_populates="analyses")
